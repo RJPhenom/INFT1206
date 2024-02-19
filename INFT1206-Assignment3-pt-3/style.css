@@ -5,6 +5,23 @@
 */
 
 /* General setup */
+@font-face {
+  font-family: 'abhaya_libreregular';
+  src: url('fonts/abhayalibre-regular-webfont.woff2') format('woff2'),
+       url('fonts/abhayalibre-regular-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+@font-face {
+  font-family: 'fira_sansregular';
+  src: url('fonts/firasans-regular-webfont.woff2') format('woff2'),
+       url('fonts/firasans-regular-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+
+}
 
 * {
   box-sizing: border-box;
@@ -14,6 +31,11 @@ body {
   margin: 0 auto;
   min-width: 1000px;
   max-width: 1400px;
+  font-family: 'abhaya_libreregular', serif;
+}
+
+h1, h2 {
+  font-family: 'fire_sansregular', sans-serif;
 }
 
 /* Layout */
