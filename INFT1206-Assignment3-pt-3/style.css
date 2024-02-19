@@ -27,15 +27,33 @@
   box-sizing: border-box;
 }
 
+html {
+  font-family: 'abhaya_libreregular', serif;
+  font-size: 10px;
+  line-height: 1px;
+}
+
 body {
   margin: 0 auto;
   min-width: 1000px;
-  max-width: 1400px;
-  font-family: 'abhaya_libreregular', serif;
+  max-width: 1400px;  
+  font-size: 1rem;
+  letter-spacing: 1em;
+  word-spacing: 1em;
+  text-indent: 20px;
 }
 
-h1, h2 {
+h1 {
   font-family: 'fire_sansregular', sans-serif;
+  font-size: 3rem;
+  text-align: center;
+  letter-spacing: 3em;
+}
+
+h2 {
+  font-family: 'fire_sansregular', sans-serif;
+  font-size: 2rem;
+  letter-spacing: 2em;
 }
 
 /* Layout */
@@ -71,3 +89,23 @@ header, footer {
 }
 
 /* WRITE YOUR CODE BELOW HERE */
+a {
+}
+
+a:link {
+  color: #a66;
+}
+
+a:visited {
+  color: #a95;
+}
+
+a:focus {
+  color: #a40;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #a80;
+  text-decoration: none;
+}
