@@ -27,33 +27,10 @@
   box-sizing: border-box;
 }
 
-html {
-  font-family: 'abhaya_libreregular', serif;
-  font-size: 10px;
-  line-height: 1px;
-}
-
 body {
   margin: 0 auto;
   min-width: 1000px;
   max-width: 1400px;  
-  font-size: 1rem;
-  letter-spacing: 1em;
-  word-spacing: 1em;
-  text-indent: 20px;
-}
-
-h1 {
-  font-family: 'fire_sansregular', sans-serif;
-  font-size: 3rem;
-  text-align: center;
-  letter-spacing: 3em;
-}
-
-h2 {
-  font-family: 'fire_sansregular', sans-serif;
-  font-size: 2rem;
-  letter-spacing: 2em;
 }
 
 /* Layout */
@@ -89,7 +66,42 @@ header, footer {
 }
 
 /* WRITE YOUR CODE BELOW HERE */
+body {
+  font-size: 1em;
+  letter-spacing: 0.1em;
+  word-spacing: 0.1em;
+}
+
+html {
+  font-family: 'abhaya_libreregular', serif;
+  font-size: 10px;
+  line-height: 1.5;
+}
+
+h1 {
+  font-family: 'fire_sansregular', sans-serif;
+  font-size: 3rem;
+  text-align: center;
+  letter-spacing: 0.1em;
+}
+
+h2 {
+  font-family: 'fire_sansregular', sans-serif;
+  font-size: 2rem;
+  letter-spacing: 0.1em;
+}
+
+p {
+  text-indent: 20px;
+}
+
+header {
+  text-align: center;
+}
+
+/* Link Styling */
 a {
+  outline-color: transparent;
 }
 
 a:link {
@@ -108,4 +120,33 @@ a:focus {
 a:hover {
   color: #a80;
   text-decoration: none;
+}
+
+a:active {
+  background-color: #a95;
+  color: #f11;
+  text-decoration: none;
+}
+
+a[href^="http"] {
+  background: url("external-link-52.png") no-repeat 100% 0;
+  background-size: 16px 16px;
+  padding-right: 19px;
+}
+
+/* List Styling */
+li {
+  line-height: 1.5;
+}
+
+ul, ol {
+  list-style-type: upper-roman;
+}
+
+/* Navigation Menu Styling */
+nav {
+  list-style-type: none;
+  margin: auto;
+  background-color: rgb(0 0 0 / 20%);
+  font-size: 2em;
 }
