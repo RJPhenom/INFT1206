@@ -16,7 +16,12 @@ div {
   text-align: center;
   font-size: 1.5rem; /*Set it to 1.5 after running several times in W3 tryit & interactive editor on MDN. Initially used 16rem, but it was way too huge */
   background-color: red;
-  border: 1px solid black
+  border: 1px solid black;
+  border-radius: 1em;
+  background-image: linear-gradient(135deg, rgb(0 0 0 / 0%) 30%, rgb(0 0 0 / 20%) 100%);
+  box-shadow: 1px 1px 5px black;
+  box-shadow: inset 1px 1px 5px rgb(255 255 255 / 50%), inset -1px -1px 5px rgb(0 0 0 / 50%);
+
 }
 
 body {
