@@ -13,5 +13,7 @@ div {
   width: 200px;
   height: 200px;
   line-height: 10;
+  margin: auto;
+  text-align: center;
 }
 /* Your CSS below here */
