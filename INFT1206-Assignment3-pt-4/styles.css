@@ -59,4 +59,7 @@ body {
 
   .feature {
       width: 200px;
+      float: left;
+      margin-right: 15px;
+      margin-bottom: 5px; /*lower because line spacing already provides some natural margin when viewed in browser window*/
   }
