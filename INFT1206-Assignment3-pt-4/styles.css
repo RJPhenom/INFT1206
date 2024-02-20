@@ -63,3 +63,9 @@ body {
       margin-right: 15px;
       margin-bottom: 5px; /*lower because line spacing already provides some natural margin when viewed in browser window*/
   }
+
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+  }
