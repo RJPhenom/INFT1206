@@ -55,7 +55,7 @@ class Shape {
 class Ball extends Shape {
   //Constructor
   constructor(x, y, velX, velY, color, size) {
-    super(x, y, velx, vely);
+    super(x, y, velX, velY);
     this.color = color;
     this.size = size;
     this.exists = true;
@@ -106,7 +106,6 @@ class Ball extends Shape {
     }
   }
 }
-
 
 //SCRIPT
 //Balls array
