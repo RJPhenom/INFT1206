@@ -71,7 +71,7 @@ function result() {
     const temperature =  Math.round(fahrenheitToCentigrade(94)) + " centigrade";
 
     newStory = newStory.replaceAll("300 pounds", weight)
-    newStory = newStory.replaceAll("94 Fahrenheit", temperature)
+    newStory = newStory.replaceAll("94 fahrenheit", temperature)
     }
 
     //Set text in html element and make visible
