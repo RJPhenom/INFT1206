@@ -1,6 +1,6 @@
 // *******************************************************
-//  Name:   main.js
-//  Date:   3/23/2024  
+//  File:   main.js
+//  Date:   23 March 2024 
 //  Auth:   Robert Macklem
 //  Desc:   Silly story generator script for MDN exercise
 //  ******************************************************

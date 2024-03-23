@@ -1,5 +1,5 @@
 //  ***************************************************************
-//  Name:   main.js
+//  File:   main.js
 //  Date:   23 March 2024
 //  Auth:   Robert Macklem
 //  Desc:   Image gallery js file for MDN exercise
