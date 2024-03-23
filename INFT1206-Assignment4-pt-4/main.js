@@ -15,6 +15,20 @@ const width = (canvas.width = window.innerWidth);
 const height = (canvas.height = window.innerHeight);
 
 //FUNCS
+//Main loop
+function loop() {
+  ctx.fillStyle = "rgb(0 0 0 / 25%)";
+  ctx.fillRect(0, 0, width, height);
+
+  for (const ball of balls) {
+    ball.draw();
+    ball.update();
+    ball.collisionDetect();
+  }
+
+  requestAnimationFrame(loop);
+}
+
 // function to generate random number
 function random(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
@@ -25,17 +39,26 @@ function randomRGB() {
   return `rgb(${random(0, 255)},${random(0, 255)},${random(0, 255)})`;
 }
 
-//SCRIPT
-//ball obj
-class Ball {
+//OBJS
+//Shape (base class)
+class Shape {
   //Constructor
-  constructor(x, y, velX, velY, color, size) {
+  constructor(x, y, velX, velY) {
     this.x = x;
     this.y = y;
     this.velX = velX;
     this.velY = velY;
+  }
+}
+
+//ball obj
+class Ball extends Shape {
+  //Constructor
+  constructor(x, y, velX, velY, color, size) {
+    super(x, y, velx, vely);
     this.color = color;
     this.size = size;
+    this.exists = true;
   }
 
   //Draw method
@@ -71,7 +94,7 @@ class Ball {
   //Collision handling
   collisionDetect() {
     for (const ball of balls) {
-      if (this !== ball) {
+      if (!(this === ball) && ball.exists) {
         const dx = this.x - ball.x;
         const dy = this.y - ball.y;
         const distance = Math.sqrt(dx * dx + dy * dy);
@@ -84,6 +107,8 @@ class Ball {
   }
 }
 
+
+//SCRIPT
 //Balls array
 const balls = [];
 
@@ -102,20 +127,6 @@ while (balls.length < 25) {
   );
 
   balls.push(ball);
-}
-
-//Add main loop
-function loop() {
-  ctx.fillStyle = "rgb(0 0 0 / 25%)";
-  ctx.fillRect(0, 0, width, height);
-
-  for (const ball of balls) {
-    ball.draw();
-    ball.update();
-    ball.collisionDetect();
-  }
-
-  requestAnimationFrame(loop);
 }
 
 //Call main loop
