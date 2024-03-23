@@ -26,11 +26,6 @@ function loop() {
   ctx.fillStyle = "rgb(0 0 0 / 25%)";
   ctx.fillRect(0, 0, width, height);
 
-  const evilCircle = new EvilCircle(
-    random(20, width - size),
-    random(20, height - size)
-  )
-
   evilCircle.draw();
   evilCircle.checkBounds();
   evilCircle.collisionDetect();
@@ -190,7 +185,7 @@ class EvilCircle extends Shape {
   
         if (distance < this.size + ball.size) {
           ball.exists = false;
-          score--; //decrements score, menaing one less ball onsc
+          score--; //decrements score, meaning one less ball onsc
           scoreText.textContent = "Ball count: " + score; //Updates screen
         }
       }
@@ -199,6 +194,12 @@ class EvilCircle extends Shape {
 }
 
 //SCRIPT
+//EvilCircle
+const evilCircle = new EvilCircle(
+  random(20, width - 20),
+  random(20, height - 20)
+)
+
 //Balls array
 const balls = [];
 
