@@ -78,6 +78,6 @@ for (i = 0; i < images.length; i++) {
 }
 
 //Add the button listener
-button.addEventListener('click', function() {
-    changeButtonShade(button)
+btn.addEventListener('click', function() {
+    changeButtonShade(btn)
 });
