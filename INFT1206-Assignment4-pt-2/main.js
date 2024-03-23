@@ -32,10 +32,18 @@ const imagesAltText = {
 
 /* Looping through images */
 for (i = o; i < images.length; i++) {
+    //Create img html obj
     const newImage = document.createElement('img');
+
+    //Set attributes
     newImage.setAttribute('src', images[i]);
     newImage.setAttribute('alt', imagesAltText[images[i]]);
+
+    //Append to div
     thumbBar.appendChild(newImage);
+
+    //Add listener
+    newImage.addEventListener('click', newImage.getAttribute('src'));
 }
 
 
