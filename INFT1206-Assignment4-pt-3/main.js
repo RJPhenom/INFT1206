@@ -1,7 +1,7 @@
 //	Name: Robert Macklem
-//  File: index.html
+//  File: main.js
 //	Date: 23 March 2024
-//	Desc: Bouncing Balls MDN OOJS exercise html file
+//	Desc: Bouncing Balls MDN OOJS exercise JavaScript file
 
 //CONSTS
 //setup canvas

@@ -1,7 +1,7 @@
 // *******************************************************
+//  Name:   Robert Macklem
 //  File:   main.js
 //  Date:   23 March 2024 
-//  Auth:   Robert Macklem
 //  Desc:   Silly story generator script for MDN exercise
 //  ******************************************************
 
