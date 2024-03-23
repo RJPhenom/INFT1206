@@ -58,10 +58,9 @@ function changeButtonShade(button) {
     }
 }
 
-
 //SCRIPT
 /* Looping through images */
-for (i = o; i < images.length; i++) {
+for (i = 0; i < images.length; i++) {
     //Create img html obj
     const newImage = document.createElement('img');
 
