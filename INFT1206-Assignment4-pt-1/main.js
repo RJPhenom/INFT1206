@@ -55,23 +55,23 @@ function result() {
     const zItem = randomValueFromArray(insertZ);
 
     //Format story with randmoized items
-    newStory = newStory.replace(":insertx:", xItem)
-    newStory = newStory.replace(":inserty:", yItem)
-    newStory = newStory.replace(":insertz:", zItem)
+    newStory = newStory.replaceAll(":insertx:", xItem)
+    newStory = newStory.replaceAll(":inserty:", yItem)
+    newStory = newStory.replaceAll(":insertz:", zItem)
 
     //Format story with name input, if given
     if(customName.value !== '') {
     const name = customName.value;
-    newStory = newStory.replace("Bob", name)
+    newStory = newStory.replaceAll("Bob", name)
     }
 
     //Format story with US / UK localization
     if(document.getElementById("uk").checked) {
-    const weight = Math.round(lbsToSt(300)).toString + " stone";
-    const temperature =  Math.round(fahrenheitToCentigrade(94)).toString + " centigrade";
+    const weight = Math.round(lbsToSt(300)) + " stone";
+    const temperature =  Math.round(fahrenheitToCentigrade(94)) + " centigrade";
 
-    newStory = newStory.replace("300 pounds", weight)
-    newStory = newStory.replace("94 Fahrenheit", temperature)
+    newStory = newStory.replaceAll("300 pounds", weight)
+    newStory = newStory.replaceAll("94 Fahrenheit", temperature)
     }
 
     //Set text in html element and make visible
