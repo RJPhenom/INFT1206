@@ -14,6 +14,12 @@ const ctx = canvas.getContext("2d");
 const width = (canvas.width = window.innerWidth);
 const height = (canvas.height = window.innerHeight);
 
+//score counter
+const scoreText = document.querySelector("p");
+
+//VARS
+let score = 0;
+
 //FUNCS
 //Main loop
 function loop() {
@@ -70,6 +76,8 @@ class Ball extends Shape {
     this.color = color;
     this.size = size;
     this.exists = true;
+    score++;
+    scoreText.textContent = "Ball count: " + score;
   }
 
   //Draw method
@@ -122,7 +130,7 @@ class EvilCircle extends Shape {
   //Constructor
   constructor (x, y) {
     super(x, y, 20, 20);
-    this.color = white;
+    this.color = "white";
     this.size = 10;
 
     //Setup movement listener on construct call
@@ -182,6 +190,8 @@ class EvilCircle extends Shape {
   
         if (distance < this.size + ball.size) {
           ball.exists = false;
+          score--; //decrements score, menaing one less ball onsc
+          scoreText.textContent = "Ball count: " + score; //Updates screen
         }
       }
     }
@@ -192,7 +202,7 @@ class EvilCircle extends Shape {
 //Balls array
 const balls = [];
 
-//While loop to populate it up to 25 balls
+//While loop to populate canvas with 25 balls
 while (balls.length < 25) {
   const size = random(10, 20);
   const ball = new Ball(
