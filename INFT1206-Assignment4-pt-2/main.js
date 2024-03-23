@@ -72,8 +72,12 @@ for (i = 0; i < images.length; i++) {
     thumbBar.appendChild(newImage);
 
     //Add listener
-    newImage.addEventListener('click', onThumbnailClick(newImage));
+    newImage.addEventListener('click', function() {
+        onThumbnailClick(newImage)
+    });
 }
 
 //Add the button listener
-button.addEventListener('click', changeButtonShade(button));
+button.addEventListener('click', function() {
+    changeButtonShade(button)
+});
