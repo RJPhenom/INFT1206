@@ -20,10 +20,21 @@ function loop() {
   ctx.fillStyle = "rgb(0 0 0 / 25%)";
   ctx.fillRect(0, 0, width, height);
 
+  const evilCircle = new EvilCircle(
+    random(20, width - size),
+    random(20, height - size)
+  )
+
+  evilCircle.draw();
+  evilCircle.checkBounds();
+  evilCircle.collisionDetect();
+
   for (const ball of balls) {
-    ball.draw();
-    ball.update();
-    ball.collisionDetect();
+    if (ball.exists) {
+      ball.draw();
+      ball.update();
+      ball.collisionDetect();
+    }
   }
 
   requestAnimationFrame(loop);
@@ -142,8 +153,8 @@ class EvilCircle extends Shape {
     ctx.stroke();
   }
 
-  //Update method (handles velocity changes/mvmt)
-  update() {
+  //Rewrite the update method from ball to check bound son player movement
+  checkBounds() {
     if ((this.x + this.size) >= width) {
       this.x -= this.size;
     }
@@ -158,6 +169,21 @@ class EvilCircle extends Shape {
   
     if ((this.y - this.size) <= 0) {
       this.y += this.size;
+    }
+  }
+
+  //Collision handling
+  collisionDetect() {
+    for (const ball of balls) {
+      if (ball.exists) {
+        const dx = this.x - ball.x;
+        const dy = this.y - ball.y;
+        const distance = Math.sqrt(dx * dx + dy * dy);
+  
+        if (distance < this.size + ball.size) {
+          ball.exists = false;
+        }
+      }
     }
   }
 }
