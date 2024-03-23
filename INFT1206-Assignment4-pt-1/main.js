@@ -10,60 +10,80 @@ const customName = document.getElementById('customname');
 const randomize = document.querySelector('.randomize');
 const story = document.querySelector('.story');
 
-//VARS
 //Primarys tory str (big str)
-let storyText = "It was 94 fahrenheit outside, so :insertx: went for a walk. When they got to :inserty:, they stared in horror for a few moments, then :insertz:. Bob saw the whole thing, but was not surprised — :insertx: weighs 300 pounds, and it was a hot day.";
+const storyText = "It was 94 fahrenheit outside, so :insertx: went for a walk. When they got to :inserty:, they stared in horror for a few moments, then :insertz:. Bob saw the whole thing, but was not surprised — :insertx: weighs 300 pounds, and it was a hot day.";
 
 //Insert strs
 //person
-let insertX = [
+const insertX = [
     "Willy the Goblin",
     "Big Daddy", 
     "Father Christmas"
 ];
 
 //place
-let insertY = [
+const insertY = [
     "the soup kitchen",
     "Disneyland", 
     "the White House"
 ];
 
 //event
-let insertZ = [
+const insertZ = [
     "spontaneously combusted",
     "melted into a puddle on the sidewalk", 
     "turned into a slug and crawled away"
 ];
 
+//Returns random element from arg
 function randomValueFromArray(array){
   const random = Math.floor(Math.random()*array.length);
   return array[random];
 }
 
+//Adds onclick listener to randomize button
 randomize.addEventListener('click', result);
 
+//Result runs on onclick event
 function result() {
-    newStory = storyText;
-    xItem = randomValueFromArray(insertX);
-    yItem = randomValueFromArray(insertY);
-    zItem = randomValueFromArray(insertZ);
+    //Declare return value (printed in html element, not actually returned)
+    let newStory = storyText;
 
+    //Get story items at random
+    const xItem = randomValueFromArray(insertX);
+    const yItem = randomValueFromArray(insertY);
+    const zItem = randomValueFromArray(insertZ);
+
+    //Format story with randmoized items
     newStory = newStory.replace(":insertx:", xItem)
     newStory = newStory.replace(":inserty:", yItem)
     newStory = newStory.replace(":insertz:", zItem)
 
+    //Format story with name input, if given
     if(customName.value !== '') {
     const name = customName.value;
-
+    newStory = newStory.replace("Bob", name)
     }
 
+    //Format story with US / UK localization
     if(document.getElementById("uk").checked) {
-    const weight = Math.round(300);
-    const temperature =  Math.round(94);
+    const weight = Math.round(lbsToSt(300)).toString + " stone";
+    const temperature =  Math.round(fahrenheitToCentigrade(94)).toString + " centigrade";
 
     }
 
-    story.textContent = ;
+    //Set text in html element and make visible
+    story.textContent = newStory;
     story.style.visibility = 'visible';
+}
+
+//Pounds to stone
+function lbsToSt(lbs) {
+    //Math from google
+    return lbs * 0.07
+}
+
+function fahrenheitToCentigrade(f) {
+    //Math from google
+    return (f - 32) / 1.8
 }
