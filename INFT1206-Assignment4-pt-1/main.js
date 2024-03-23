@@ -70,6 +70,8 @@ function result() {
     const weight = Math.round(lbsToSt(300)).toString + " stone";
     const temperature =  Math.round(fahrenheitToCentigrade(94)).toString + " centigrade";
 
+    newStory = newStory.replace("300 pounds", weight)
+    newStory = newStory.replace("94 Fahrenheit", temperature)
     }
 
     //Set text in html element and make visible
