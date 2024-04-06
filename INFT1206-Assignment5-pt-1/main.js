@@ -10,7 +10,7 @@ const commentWrapper = document.querySelector('.comment-wrapper');
 
 commentWrapper.style.display = 'none';
 
-showHideBtn.onclick = function() {
+function showHidefunction() {
   let showHideText = showHideBtn.textContent;
   if(showHideText === 'Show comments') {
     showHideBtn.textContent = 'Hide comments';
@@ -19,7 +19,18 @@ showHideBtn.onclick = function() {
     showHideBtn.textContent = 'Show comments';
     commentWrapper.style.display = 'none';
   }
+}
+
+showHideBtn.onclick = function() {
+  showHidefunction();
 };
+
+//ENTER click
+showHideBtn.addEventListener("keydown", function(event) {
+  if (event.key == 'Enter') {
+    showHidefunction();
+  }
+})
 
 // functionality for adding a new comment via the comments form
 
@@ -58,7 +69,7 @@ const transcriptBtn = document.querySelector('.transcript-container button');
 
 transcriptBtn.onclick = function() {
   if(transcriptBtn.textContent === 'Show transcript') {
-    transcript.style.height = '100%';
+    transcript.style.height = '100%';  // changed to dynamic sizing
     transcriptBtn.textContent = 'Hide transcript';
   } else {
     transcript.style.height = '0';
