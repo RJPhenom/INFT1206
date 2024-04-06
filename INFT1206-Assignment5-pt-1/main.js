@@ -1,3 +1,8 @@
+// Name: Robert Macklem
+// File: main.js
+// Date: 06 April 2024
+// A nice accessible website about bears!
+
 // functionality for showing/hiding the comments section
 
 const showHideBtn = document.querySelector('.show-hide');
