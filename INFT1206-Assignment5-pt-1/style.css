@@ -253,3 +253,13 @@ audio {
 .comment-container li p:nth-child(2) {
   flex: 5;
 }
+
+.transcript {
+  height: 0;
+  overflow: auto;
+  padding: 0 3rem
+}
+
+.transcript-container button {
+  height: 2em;
+}
